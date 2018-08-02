@@ -1,0 +1,65 @@
+
+
+
+
+.circle {
+	line-height: 0;		/* remove line-height */ 
+	display: inline-block;	/* circle wraps image */
+	margin: 5px;
+  border: 2px solid rgba(255,255,255,0.4);
+	border-radius: 50%;	/* relative value */
+	/*box-shadow: 0px 0px 5px rgba(0,0,0,0.4);*/
+	transition: linear 0.25s;
+  height : 80px;
+  width: 80px !important;
+}
+
+.containerDiv
+{
+	height: 150% !important;
+	
+}
+
+.visionh5
+{
+	padding-bottom: 5px;
+}
+.cardtestimonial
+{
+	height : 160px;	
+	
+	font-size: 11px;
+	color:#3e3c37;
+	font-family: sans-serif;
+}
+.card-title
+{
+	margin-top: 12px;
+	font-size:18px;
+}
+.highlightdesc
+{
+	height : 240px;	
+	/* width:400px; */
+	font-size: 11px;	
+	font-family: sans-serif;
+}
+.highlightimg
+{
+	margin-top: 15px !important;
+}
+
+.card-text
+{
+	margin-top:2px;
+	font-size: 14px !important;
+}
+
+@media  screen and (min-width: 1520px) {
+   
+    .containerDiv
+    {
+      height: 150% !important;
+      width:550px;
+    }
+  }
