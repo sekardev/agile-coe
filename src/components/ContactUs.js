@@ -1,91 +1,80 @@
 import React from 'react'
 import '../assests/css/contact.css'
 
-const Contactus = ()=>{
 
+const Contactus = ({teams})=>{
+
+if(teams !== 'undefined' && teams.length > 0)
+{
+  
 return(
-
+    
     <div>
-
-<div class="container">
-
+<div className="flex-container">
       
-      <h1 class="my-4">About Us
-        <small>It's Nice to Meet You!</small>
-      </h1>
-      
-      <div class="row">
-        <div class="col-lg-4 col-sm-6 text-center mb-4">
+      <div className="item1">
+        
+        <div className="head" >
+          <img className="rounded-circle Img"  src={teams[0].Avatar} alt="" />
+          <h4>{teams[0].Name} <br/>
+            <small>{teams[0].AgileRole}</small>
+          </h4>
          
         </div>
-        <div class="col-lg-4 col-sm-6 text-center mb-4" >
-          <img class="rounded-circle Img"  src="https://mdbootstrap.com/img/Photos/Avatars/img%20(3).jpg" alt="" />
-          <h3>John Smith
-            <small>Job Title</small>
-          </h3>
-          <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
-        </div>
-        <div class="col-lg-4 col-sm-6 text-center mb-4">          
-        </div>
+        
       </div>
       
-      <div class="row">
+      <div className="item2">
      
-        <div class="col-lg-6 col-sm-6 text-center mb-4">
-          <img class="rounded-circle Img" src="https://mdbootstrap.com/img/Photos/Avatars/img%20(4).jpg" alt="" />
-          <h3>John Smith
-            <small>Job Title</small>
-          </h3>
-          <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
+        <div className="col-lg-6 col-sm-6 text-center mb-4">
+          <img className="rounded-circle Img" src={teams[1].Avatar} alt="" />
+          <h5>{teams[1].Name} <br/>
+            <small>{teams[1].AgileRole}</small>
+          </h5>
+          
         </div>
-        <div class="col-lg-6 col-sm-6 text-center mb-4">
-          <img class="rounded-circle Img" src="https://mdbootstrap.com/img/Photos/Avatars/img%20(5).jpg" alt=""/>
-          <h3>John Smith
-            <small>Job Title</small>
-          </h3>
-          <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
+        <div className="col-lg-6 col-sm-6 text-center mb-4">
+          <img className="rounded-circle Img" src={teams[2].Avatar} alt=""/>
+          <h5>{teams[2].Name} <br/>
+            <small>{teams[2].AgileRole}</small>
+          </h5>
+       
         </div>
        
         </div>
-        <div class="row">
-        <div class="col-lg-3 col-sm-6 text-center mb-4">
-          <img class="rounded-circle Img" src="http://placehold.it/200x200" alt=""/>
-          <h3>John Smith
-            <small>Job Title</small>
-          </h3>
-          <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
-        </div>
-        <div class="col-lg-3 col-sm-6 text-center mb-4">
-          <img class="rounded-circle Img" src="http://placehold.it/200x200" alt=""/>
-          <h3>John Smith
-            <small>Job Title</small>
-          </h3>
-          <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
-        </div>
-        <div class="col-lg-3 col-sm-6 text-center mb-4">
-          <img class="rounded-circle Img" src="http://placehold.it/200x200" alt=""/>
-          <h3>John Smith
-            <small>Job Title</small>
-          </h3>
-          <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
-        </div>
-        <div class="col-lg-3 col-sm-6 text-center mb-4">
-          <img class="rounded-circle Img" src="http://placehold.it/200x200" alt=""/>
-          <h3>John Smith
-            <small>Job Title</small>
-          </h3>
-          <p>What does this team member to? Keep it short! This is also a great spot for social links!</p>
-        </div>
-      </div>
+        <div className="item3">
+        {teams.filter((t)=> (t.SafeAgile === 1 )).map((team,i)=>{
+        return(  
+        <div className="col-md-2 col-sm-2 text-center team" >
+          <img className="rounded-circle Img" src={team.Avatar} alt=""/>
+          <h6>{team.Name} <br/>
+            <small className="safe">{team.SafeAgile === 1 ? "Safe Agile" : "Scrum Master" }</small>
+          </h6>
+        </div>)
+        })}
+      </div>  
+      <div className="item3">
+      {teams.filter((t)=> (t.ScrumMaster===1 )).map((team,i)=>{
+        return(  
+        <div className="col-md-2 col-sm-2 text-center team" >
+          <img className="rounded-circle Img" src={team.Avatar} alt=""/>
+          <h6>{team.Name} <br/>
+            <small className="agile">{team.SafeAgile === 1 ? "Safe Agile" : "Scrum Master" }</small>
+          </h6>
+        </div>)
+        })}
+     
+       </div> 
 
-    </div>
-    
-
-
-        </div>
+    </div></div>
 
 
 )
+}
+else 
+{
+  return(<div>No Record </div>)
+}
 
 }
 

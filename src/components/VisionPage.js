@@ -1,21 +1,20 @@
 import React from 'react'
 import '../assests/css/vision.css'
-
+import ReactHtmlParser from 'react-html-parser';
 
 const VisionPage = ({visions})=>
 {
-    
+    if({visions})
+    {
         return (
             <div className="containerDiv">
                 <div className="card">
                <div className="cardTitle">
-          
-          <span>Leader Vision </span>
-          
+          Leader Vision 
           </div>
           <div id="divVisionCar" className="carousel slide" data-ride="carousel">
             
- 
+
   <div className="carousel-inner">
       {visions.map((vision,i)=>{
             return(
@@ -36,7 +35,7 @@ const VisionPage = ({visions})=>
              </div>
              <div className="row cardtestimonial">
                  <div className="col text-left">           
-                   Dear All, {vision.Testimonial}                    
+                   Dear All, {ReactHtmlParser(vision.Testimonial)}                
                     </div>
               </div>
               </div> : 
@@ -55,7 +54,7 @@ const VisionPage = ({visions})=>
                </div> 
                <div className="row cardtestimonial">
             <div className="col text-left">           
-            Dear All, {vision.Testimonial}                    
+            Dear All,{ReactHtmlParser(vision.Testimonial)}                     
             </div>
               </div>
                 
@@ -78,6 +77,15 @@ const VisionPage = ({visions})=>
   </div>
    </div>
         )
+    }
+    else 
+    return(
+        <div className="containerDiv">
+           
+        No Visions 
+        </div>
+    )
+        
     }
 
 export default VisionPage;

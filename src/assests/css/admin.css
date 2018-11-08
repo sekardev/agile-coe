@@ -10,4 +10,11 @@
     padding-bottom:50px;        
 }
 
-
+.btngrp{
+    padding : 5px;
+    margin: 1px;
+}
+#tdAction{
+    vertical-align: middle;
+    padding:5px;
+}

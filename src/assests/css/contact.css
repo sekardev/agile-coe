@@ -1,4 +1,112 @@
 .Img{
-    width:120px;
-    height:120px;
+    width:80px;
+    height:80px;
+}
+
+.flex-container
+{
+    background-color: white;
+    margin-top: 65px;
+    padding-top:20px;
+    display: flex;
+    flex-direction: column;
+    /* background: linear-gradient(#ff4e17 ,#ee920c ); */
+      
+}
+.item1, .item2, .item3{
+    display: flex;
+    width:100%;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: space-around;
+}
+.item2{
+    background: linear-gradient(#4b5968 ,#4b5968 );
+    width:80%;    
+    align-self: center;
+    flex-direction: row;
+    
+}
+.leftT
+{
+    display: flex;    
+    justify-self: center;
+    width:30%;
+    
+}
+.headT1{
+    display: flex;
+    flex-direction: row;
+}
+.headT{  
+    display: flex;      
+    flex-direction: column;
+    align-self: center;    
+    margin-right:50px;    
+    padding-left:80px;
+    padding-right: 1px;
+    border-right: thin solid #a0a3a5;  
+   
+}
+  
+  .Hrdivider {
+    flex-grow: 1;    
+    margin: 5px;
+    align-self: center;
+    width: 60px;    
+    background-color: #a0a3a5;
+  }
+  
+  .divider {
+    width: 1px;
+    height: 60px;    
+    margin-left: 50px;
+    margin-bottom: 20px;        
+    background: #a0a3a5  ;
+  }
+.rightT{
+    width:70%;    
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    padding: 20px;
+}
+.agile, .scrum{         
+    border: thin solid #a0a3a5;   
+    border-right: none;
+   
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+}
+.agile {
+    margin-bottom: 50px;
+}
+
+.team{
+    margin-bottom: 30px;
+}
+.safeAgile
+{
+    display: flex;
+    flex-direction: row;
+    padding: 20px;
+}
+.teamDetails{
+    align-self: center;
+    padding-left: 10px;
+}
+.safe{
+    color: #f4f38d;
+    font-weight: bold; font-weight: normal;
+}
+.agile{
+    color: brown;font-weight: bold;
+}
+.name{
+    color:white !important;
+    font-weight: normal;
+}
+h4{
+    color:white;
 }

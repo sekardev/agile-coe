@@ -10,7 +10,7 @@ const ImageSlider=({AgileTeamMembers})=>
     const settings = {
         dots: false,
         infinite: true,
-        slidesToShow: 3,
+        slidesToShow: 5,
         slidesToScroll: 1,
         autoplay: true,
         speed: 3000,

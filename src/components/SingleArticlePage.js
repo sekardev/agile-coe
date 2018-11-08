@@ -1,14 +1,13 @@
 
 import React from 'react'
 import {Link} from 'react-router'
-import lean from "../assests/LeanUX.png";
 import view from "../assests/View.png";
-import logo from "../assests/Logo.png";
 import LeanUX_02 from "../assests/LeanUX_02.png";
 import LeanUX_03 from "../assests/LeanUX_03.png";
 import {connect} from 'react-redux';
 import {loadArticleById, loadArticle } from '../action/articleActions'
 import ReactHtmlParser from 'react-html-parser';
+import moment from 'moment'
 
 class SingleArticlePage extends React.Component
 {    
@@ -17,10 +16,13 @@ class SingleArticlePage extends React.Component
         var articles = [];
         if(this.props.singleArticle)
         { 
+           
             articles = this.props.articles;
             singlearticle = this.props.singleArticle;
-
+            const custDate = singlearticle.CreatedDate.slice(6, 10)+'-'+ singlearticle.CreatedDate.slice(3, 5) +'-'+ singlearticle.CreatedDate.slice(0,2);
+            const momentNow = moment(custDate).format('MMM DD, YYYY');         
     return(
+        
         <div>             
         <div className="container-fluid singlearticlemain" >
 
@@ -46,7 +48,7 @@ class SingleArticlePage extends React.Component
             <img alt="" className="rounded-circle circle" src={singlearticle.Avatar} / >   
             <div className="singlearticleauthor"> 
             <div>{singlearticle.Author}</div>
-            <div>22nd July 2018</div>
+            <div>{momentNow}</div>
             </div>        
             </div>
             <div className="col-md-4 singlearticleview">
@@ -68,7 +70,7 @@ class SingleArticlePage extends React.Component
             </div>
 
             <div className=" row singlearticlebody2">
-        <div className="col-md-6 ">  
+        <div className="col-md-6 "   >  
         <img alt="" 
             className="" src={LeanUX_02} / >
 
@@ -81,20 +83,22 @@ class SingleArticlePage extends React.Component
 
         </div>
         <div className="col-md-3">
-                <div className="row otherArticletitle">                
-                  <span>Other Articles </span>
-                 </div>
+                <section className="otherArticles">                
+                  <section class="arthead">Other Articles </section> 
+                  <section>                 
                  {articles.map((article,i)=>{
                      return(
-                    <div className="row otheraritclerow" key={i}>
-                    <div className="col-md-12">
+                    <section className="otheraritclerow" key={i}>
+                    
                         <Link to={{ pathname: '/article/'+article.Id}} > 
-                        <span className="artTitle">{article.Title}</span> <br/>
-                        <span className="artAuthor">{article.Author}</span>
+                        <span className="arTitle">{article.Title}</span> <br/>
+                        <span className="arAuthor">{article.Author}</span>
                         </Link>
-                     </div>
-                     </div> )      
+                     
+                     </section> )      
                  })}
+                 </section>
+                 </section>
             </div>
         </div>    
 

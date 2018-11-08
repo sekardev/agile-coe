@@ -1,11 +1,11 @@
 import React from 'react'
-import { EditorState, convertToRaw } from 'draft-js';
 import { Editor } from 'react-draft-wysiwyg';
 import '../assests/css/admin.css'
+
 import ReactHtmlParser from 'react-html-parser';
 
 const HighlightAdminPage = ({handleChange,fileChangedHandler,
-  handleSubmit,onEditorStateChange,highlight,highlights,handleShowGrid}) =>
+  handleSubmit,onEditorStateChange,highlight,handleEdit,highlights,handleShowGrid,handleDelete}) =>
 {
         if(!highlight.showGrid)
         {
@@ -25,12 +25,17 @@ const HighlightAdminPage = ({handleChange,fileChangedHandler,
               <tbody>
               {highlights.map((hghlght,i)=>{
                      return(
-                      <tr >                      
+                      <tr key={i} >                      
                       <td>{hghlght.Title}</td>
                       <td>{ReactHtmlParser(hghlght.Description)}</td>
                       <td>{hghlght.Order}</td>
-                      <td><button type="button" className="btn btn-danger btn-sm" 
-              onClick={handleShowGrid}>Delete</button> </td>
+                      <td id="tdAction">
+                <button type="button" className="btn btn-danger btn-sm btngrp" 
+              onClick={()=>handleDelete(hghlght.Id,'highlight')}>Delete
+              </button>
+              <button type="button" className="btn btn-info btn-sm btngrp" 
+              onClick={()=>handleEdit(hghlght.Id,'highlight')}>Edit</button> 
+               </td>
                       </tr>    
                     )      
                  })}

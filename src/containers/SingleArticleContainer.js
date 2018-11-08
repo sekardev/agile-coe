@@ -14,7 +14,8 @@ class SingleArticleContainer extends React.Component{
 }
 
 function mapStateToProps(state,props)
-{    
+{   
+    
     return {
         articles : state.articles,
         article : state.articles.filter((a)=>a.Id == props.params.id)

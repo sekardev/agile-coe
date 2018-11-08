@@ -11,7 +11,7 @@ import ArticleListContainer from './containers/ArticleListContainer';
 import SampleContainer from './containers/SampleContainer';
 import AdminContainer from './containers/AdminContainer';
 import SingleArticleContainer from './containers/SingleArticleContainer';
-import ContactUs from './components/ContactUs';
+import ContactUsContainer from './containers/ContactUsContainer';
 import ContentEditorContainer from './containers/ContentEditorContainer';
 
 
@@ -29,7 +29,7 @@ export default (
         <Route path="sample" component = {SampleContainer} />
         <Route path="admin" component = {AdminContainer} />
         <Route path="article/:id" component = {SingleArticleContainer}  />
-        <Route path="contactus" component = {ContactUs}  />
+        <Route path="contactus" component = {ContactUsContainer}  />
 
     </Route>
 )

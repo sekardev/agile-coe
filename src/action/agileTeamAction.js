@@ -13,7 +13,7 @@ export function loadAgileTeams()
 {
     
     return dispatch=>{
-        axios.get(actions.agileTeamAction).then(
+        axios.get(actions.agileTeamActionAPI).then(
             resp=>{               
                 dispatch(getAgileTeam((resp.data)))
             }

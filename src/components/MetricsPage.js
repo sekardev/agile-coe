@@ -3,79 +3,30 @@ import ReactHtmlParser from 'react-html-parser';
 import '../assests/css/metrics.css'
 
 const MetricsPage = ({metrics})=>{
-    
-    if(metrics && metrics.length >0)
-    {
-        
-    return(
-        
-        <div>
-        
-        <div className="row ">
-           
-            <div className="col-md-3 cardMetrics">
-            <div className="">
-               
-                
-                    <div className="col text-center carddescription">
-                    <h2>{metrics[0].Value} </h2>  <div className="clearfix"></div>
-                    {ReactHtmlParser(metrics[0].Name)}
+    return (
+    <div className="metricsGrid">        
+        {metrics.map((metric,i)=>{              
+                {
+                if(i == 0 )
+                   return (
+                    <section className="metricsItemls" key= {i}>         
+                    <div className="text-center carddescription">
+                    <h2>{metric.Value} </h2>  <div className="clearfix"></div>
+                    <span className="">{ReactHtmlParser(metric.Name)}</span>
                     </div>
-                
-                </div>
-            </div>
-            <div className="col-md-2 cardMetrics">
-            <div className="">
-               
-                
-                    <div className="col text-center carddescription">
-                    <h2> {metrics[1].Value} </h2>  <div className="clearfix"></div>
-                    {ReactHtmlParser(metrics[1].Name)}
-                    </div>
-                
-                </div>
-            </div>
-            <div className="col-md-2 cardMetrics">
-            <div className="">
-                    <div className="col text-center carddescription">
-                    <h2> {metrics[2].Value} </h2>  <div className="clearfix"></div>
-                    {ReactHtmlParser(metrics[2].Name)}
-                    </div>
-                
-                </div>
-            </div>
-            <div className="col-md-2 cardMetrics">
-            <div className="">
-               
-                
-                    <div className="col text-center carddescription">
-                    <h2> {metrics[3].Value} </h2>  <div className="clearfix"></div>
-                    {ReactHtmlParser(metrics[3].Name)}
-                    </div>
-                </div>
-                
-            </div>
-            <div className="col-md-2 cardMetrics cardMetricsLast">
-            <div className="">
-               
-                
-                    <div className="col text-center carddescription">
-                    <h2> {metrics[4].Value} </h2>  <div className="clearfix"></div>
-                    {ReactHtmlParser(metrics[4].Name)}
-                    </div>
-                </div>
-                
-            </div>
-        </div>
-        <br/>
-        </div>
-    )
-}
-else 
-{
-    return('<div>No Record Found </div>')
-}
-
+                    </section>
+                  )
+                }               
+                    return (
+                        <section className="metricsItem"  key= {i}>         
+                        <div className="text-center carddescription">
+                        <h2>{metric.Value} </h2>  <div className="clearfix"></div>
+                        <span className="">{ReactHtmlParser(metric.Name)}</span>
+                        </div>
+                        </section>)
+            })}
+</div>    
+)
 }
 
 export default MetricsPage;

@@ -32,12 +32,17 @@
 
   
 .teamDiv
-{
-  background: linear-gradient(#fdb713  ,#fda813  );
+{  
   margin-bottom:10px;
   margin-top:20px;
-
 }
+span {
+  color: #FFFFFF;
+  font-weight: normal;
+  text-align: center;
+  font-family: sans-serif !important;
+}
+
 .teamDiv h5
 {  
   margin-left:95px;

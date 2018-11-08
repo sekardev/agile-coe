@@ -9,11 +9,21 @@ export function getArticles(articles)
     }
 }
 
-export function getArticle(article)
+export function addArticle(article)
+{  
+    
+    return {
+        type : 'ADD_ARTICLE',
+        article
+    }
+}
+
+
+export function deleteArticle(article)
 {
     
     return {
-        type : 'FETCH_ARTICLE',
+        type : 'DELETE_ARTICLE',
         article
     }
 }
@@ -21,8 +31,8 @@ export function getArticle(article)
 export function loadArticle()
 {    
     return dispath =>{
-            axios.get(actions.articleAction).then(
-                resp=>{                                      
+            axios.get(actions.articleActionAPI).then(
+                resp=>{                                                     
                     dispath(getArticles(resp.data))
                 }
             ).catch(err=>{
@@ -31,24 +41,29 @@ export function loadArticle()
     }
 }
 
-export function loadArticleById(Id)
+
+export function addArticleAPI(article)
 {    
     return dispath =>{
-            axios.get(actions.articleByIdAction + Id).then(
-                resp=>{     
-                    console.log('loadArticleById' + resp.data)                                 
-                    dispath(getArticle(resp.data))
-                }
-            ).catch(err=>{
+            axios.post(actions.articleActionAPI,article).then(
+                (resp)=>{ 
+                    article.Id = resp.data.Id
+                    console.log(article);
+                    dispath(addArticle(article)) 
+                 }).catch(err=>{
                 console.log(err)
             })
     }
 }
-export function addArticle(article)
+
+export function deleteArticleAPI(article)
 {    
     return dispath =>{
-            axios.post(actions.articleAction,article).then(()=> dispath(loadArticle())  ).catch(err=>{
+            axios.get(actions.articleActionAPI + "/delete/" + article.Id).then(()=>
+             dispath(deleteArticle(article)) 
+            ).catch(err=>{
                 console.log(err)
             })
-    }
+   }
+   
 }

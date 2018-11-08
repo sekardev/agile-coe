@@ -16,7 +16,7 @@ class Dropdown extends React.Component {
               <label className="col-form-label">Choose Page:</label>
              </div>
            <div className="col-sm-6">
-           <select className="form-control" onChange={this.props.onChange} >
+           <select className="form-control" onChange={this.props.onChange}  >
                 {optionItems}
              </select>
            </div>

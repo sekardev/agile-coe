@@ -15,7 +15,6 @@ import { loadVision } from './action/visionActions';
 import { loadHighlights } from './action/highlightActions';
 import { loadAgileTeams   } from './action/agileTeamAction';
 import { loadEvents   } from './action/eventActions';
-import { loadArticleById } from './action/articleActions';
 import { loadTables } from './action/tableActions';
 import { loadMetrics } from './action/metricActions';
 
@@ -29,7 +28,6 @@ store.dispatch(loadVision());
 store.dispatch(loadHighlights());
 store.dispatch(loadAgileTeams());
 store.dispatch(loadEvents());
-store.dispatch(loadArticleById(1));
 store.dispatch(loadTables());
 store.dispatch(loadMetrics());
 

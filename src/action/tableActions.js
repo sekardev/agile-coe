@@ -13,7 +13,7 @@ export function loadTables()
 {
     
     return dispatch=>{
-        axios.get(actions.tableAction).then(
+        axios.get(actions.tableActionAPI).then(
             resp=>{               
                 dispatch(getTableAction((resp.data)))
             }

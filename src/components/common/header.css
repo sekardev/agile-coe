@@ -70,7 +70,9 @@
 {
   color: white;
   font-family: sans-serif ;
-  font-size: 10px;
+  font-size: 9px !important;
+  padding-left: 0px !important;
+  padding-right:0px !important;
 }
 #navbarNavDropdown
 {  

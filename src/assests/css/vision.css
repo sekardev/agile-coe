@@ -39,7 +39,7 @@
 }
 .highlightdesc
 {
-	height : 240px;	
+	height : 90%;
 	/* width:400px; */
 	font-size: 11px;	
 	font-family: sans-serif;
@@ -48,7 +48,9 @@
 {
 	margin-top: 15px !important;
 }
-
+.card{
+	height:60%;
+}
 .card-text
 {
 	margin-top:2px;

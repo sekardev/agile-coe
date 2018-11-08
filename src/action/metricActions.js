@@ -13,7 +13,7 @@ export function getMetric(metrics)
 export function loadMetrics()
 {    
     return dispath =>{
-            axios.get(actions.metricAction).then(
+            axios.get(actions.metricActionAPI).then(
                 resp=>{                                      
                     dispath(getMetric(resp.data))
                 }

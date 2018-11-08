@@ -9,7 +9,7 @@ const HighlightPage = ({highlights})=>
             <div className="containerDiv">
                 <div className="card">
                <div className="cardTitle">
-         <span> Highlights </span>
+            Success Stories
           </div>
           <div id="divHighCar" className="carousel slide" data-ride="carousel">
             
@@ -21,7 +21,7 @@ const HighlightPage = ({highlights})=>
               <div className="carousel-item active" key={i}>  
               <div className="row no-gutters highlightdesc">            
               <div className="col-auto">
-              <img src={highlight.Image64} alt={highlight.Title} 
+              <img src={highlight.Image} alt={highlight.Title} 
                 className="rounded circle highlightimg" />  
                  </div>
                 <div className="col">
@@ -30,7 +30,7 @@ const HighlightPage = ({highlights})=>
                 </div></div></div></div> : 
               <div className="carousel-item " key={i}>
               <div className="row no-gutters highlightdesc">
-              <div className="col-auto"><img src={highlight.Image64} alt={highlight.Name} 
+              <div className="col-auto"><img src={highlight.Image} alt={highlight.Name} 
                 className="rounded circle" />    </div>
                 <div className="col">
                 <div className="card-block px-2 highlightdesc  text-left">

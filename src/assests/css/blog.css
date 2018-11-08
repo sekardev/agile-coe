@@ -1,0 +1,112 @@
+.thumbnailblog{
+    background-color:#fff;
+    border-radius:0!important;
+    box-shadow:0 0 3px #bdbdbd;
+    display:inline-block;
+    line-height:1.42857;
+    margin-bottom:20px;
+    transition:all 0.4s ease-in 0s;
+    width:95%;
+    
+}
+.thumbnailblog:hover{
+    box-shadow:0 0 12px #ccc;
+    transition:0.4s ease-in-out 0s
+}
+
+
+.thumbnailblog .imagewrapper.thumbnail{
+    border:medium none;
+    border-radius:0;
+    margin-bottom:0;
+    max-height:156px;
+    min-height:156px;
+    overflow:hidden;
+    padding:0;
+    position:relative
+}
+.pintabheadingblog{
+    color:#444;
+    font-size:12px;
+    font-weight:600;
+    margin-bottom:10px!important;
+    margin-top:14px!important;
+    padding:0 15px;
+    text-align:left
+}
+.pintabheadingblog>a{
+    color:#444;
+    line-height:20px
+}
+
+.author{
+    color:#ff4e17;
+    display:inline-block;
+    font-size:12px;
+    font-weight:600;
+    margin-bottom:6px;
+    padding:0 15px;
+    width:100%
+}
+.title-author-box{
+    border-bottom:1px solid #e5e5e5;
+    display:block;
+    padding:0 0 6px;
+    width:100%
+}
+.author>a{
+    color:#ff4e17;
+    padding-left:3px
+}
+
+.comviewsblog{
+    margin:8px 0px 8px;    
+    padding-left:15px;    
+    text-align:left;
+    white-space:normal
+}
+.comviewsblog>.borderright{
+    position:relative;
+    top:-1px
+}
+.borderright{
+    border-right:1px solid #c7c7c7;
+    padding-right: 15px;
+    height:16px;
+    top:13px;
+    vertical-align:middle
+}
+
+.imgbloghover{
+    transition: transform .2s;
+    width:100%
+}
+.imgbloghover:hover {
+     transform: scale(1.2);
+    
+
+}
+
+@media only screen and (min-width:300px) and (max-width:479px){
+    .blogcards{
+        width:100%!important
+    }
+    .featmain{
+        width:100%!important
+    }
+}
+
+.viewsblog{
+    color:#444;
+    font-size:12px;
+    font-weight:600;
+    margin:10px 6px
+}
+.viewsblog>span>i.icon-Blog-View-icon{
+    color:#f0b017;
+    font-size:20px;
+    line-height:0;
+    position:relative;
+    top:-2px;
+    vertical-align:middle
+}

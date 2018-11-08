@@ -5,8 +5,14 @@ export default function carouselReducers (state=[], action)
     {
         case 'LOAD_CAROUSEL':              
             return action.carousels;
-        case 'DELETE_CAROUSEL':
-            return state.filter((data, i) => i !== action.id);
+        case 'ADD_CAROUSEL': 
+        if(action.carousel.Id > 0)      
+        {
+          state = state.filter( carousel => carousel.Id !== action.carousel.Id );
+        }                             
+        return [...state,action.carousel];
+        case 'DELETE_CAROUSEL':    
+            return state.filter(item=> item.Id !== action.carousel.Id)
         default :
             return state;
     }

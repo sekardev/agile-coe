@@ -2,11 +2,11 @@ import React from 'react'
 import { Editor } from 'react-draft-wysiwyg';
 import '../assests/css/admin.css'
 import ReactHtmlParser from 'react-html-parser';
-
-const CarouselAdminPage = ({handleChange,fileChangedHandler,handleSubmit,
-  onEditorStateChange,carousel,carousels,handleEdit,handleShowGrid,handleDelete}) =>
+import AssociateDropdown from './AssociateDropdown'
+const VisionAdminPage = ({handleChange,fileChangedHandler,handleSubmit,
+  onEditorStateChange,vision,visions,handleShowGrid,handleEdit,associates,handleDelete,handleAssociateChange}) =>
   {
-    if(!carousel.showGrid)
+    if(!vision.showGrid)
     {
       return (
         <div>
@@ -15,24 +15,26 @@ const CarouselAdminPage = ({handleChange,fileChangedHandler,handleSubmit,
         <table className="table table-hover table-bordered">
         <thead>
         <tr>
-        <th scope="col">Title</th>
-        <th scope="col">Description</th>
-        <th scope="col">Order</th>    
+        <th scope="col">Vision</th>
+        <th scope="col">Author</th>        
+        <th scope="col">Order</th>   
         <th scope="col">Action</th>           
         </tr>
         </thead>
         <tbody>
-        {carousels.map((caro,i)=>{
+        {visions.map((vis,i)=>{
           return(
             <tr key={i} >                      
-            <td>{caro.Title}</td>
-            <td>{ReactHtmlParser(caro.Description)}</td>
-            <td>{caro.Order}</td>
+            
+            <td>{ReactHtmlParser(vis.Testimonial)}</td>
+            <td>{vis.Name}</td>
+            <td>{vis.Order}</td>
             <td id="tdAction"><button type="button" className="btn btn-danger btn-sm btngrp" 
-            onClick={()=> handleDelete(caro.Id,'carousel')}>Delete</button>
-             <button type="button" className="btn btn-info btn-sm btngrp" 
-              onClick={()=>handleEdit(caro.Id,'carousel')}>Edit</button> 
-             </td>
+            onClick={()=> handleDelete(vis.Id,'vision')}>Delete</button>           
+              <button type="button" className="btn btn-info btn-sm btngrp" 
+              onClick={()=>handleEdit(vis.Id,'vision')}>Edit</button> 
+            </td>
+            
             </tr>                          
           )      
         })}
@@ -49,38 +51,28 @@ const CarouselAdminPage = ({handleChange,fileChangedHandler,handleSubmit,
         <form >
         
         <div className="form-group row">
-        <div className="col-sm-2">
-        <label className="col-form-label">Title :</label>
+               <div className="col-sm-2">
+                 <label className="col-form-label">Choose Associate:</label>
+                </div>           
+                <div className="col-sm-6">
+                <AssociateDropdown associates = {associates} 
+                handleChange= {handleAssociateChange} 
+                selectedValue={vision.AssociateId}
+                />
+                </div>
         </div>
-        <div className="col-sm-8">
-        <input
-        type="text"
-        className="form-control"
-        id="title"
-        value={carousel.Title}
-        onChange={handleChange} />       
-        </div>
-        </div>    
         <div className="form-group row">
         <div className="col-sm-2">
-        <label className="col-form-label">Description :</label>
+        <label className="col-form-label">Vision :</label>
         </div>
         <div className="col-sm-8 editorclass">
         <Editor 
-        editorState={carousel.editorState}              
+        editorState={vision.editorState}              
         onEditorStateChange={onEditorStateChange}
         
         />     
         </div>
-        </div>                
-        <div className="form-group row">
-        <div className="col-sm-2">
-        <label className="col-form-label">Image :</label>
-        </div>
-        <div className="col-sm-8 ">
-        <input id="uploadfile" type="file" onChange={fileChangedHandler} />
-        </div>
-        </div>  
+        </div>                       
         <div className="form-group row">
         <div className="col-sm-2">
         
@@ -101,4 +93,4 @@ const CarouselAdminPage = ({handleChange,fileChangedHandler,handleSubmit,
     }
   }
   
-  export default CarouselAdminPage;
+  export default VisionAdminPage;

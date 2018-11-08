@@ -15,14 +15,21 @@ export function deleteCarousel(carousel)
         carousel
     }
 }
-
+export function addCarousel(carousel)
+{  
+    
+    return {
+        type : 'ADD_CAROUSEL',
+        carousel
+    }
+}
 
 
 export function loadCarousel()
 {
     
     return dispath =>{
-            axios.get(actions.carouselAction).then(
+            axios.get(actions.carouselActionAPI).then(
                 resp=>{                                      
                     dispath(getCarousel(resp.data))
                 }
@@ -31,25 +38,26 @@ export function loadCarousel()
             })
     }
 }
-export function addCarousel(carousel)
+export function addCarouselAPI(carousel)
 {    
     return dispath =>{
-            axios.post(actions.carouselAction,carousel).then(()=> dispath(loadCarousel())  ).catch(err=>{
+            axios.post(actions.carouselActionAPI,carousel).then((resp)=> {             
+             carousel.Id = resp.data.Id
+             dispath(addCarousel(carousel));             
+            }).catch(err=>{
                 console.log(err)
             })
     }
 }
 
-// export function deleteCarouselAPI(carousel)
-// {    
-//     return dispath =>{
-//             axios.delete(actions.carouselAction,carousel).then(()=>
-
-             
-//              dispath(deleteCarousel()) 
-            
-//             ).catch(err=>{
-//                 console.log(err)
-//             })
-//     }
-// }
+export function deleteCarouselAPI(carousel)
+{    
+    return dispath =>{
+            axios.get(actions.carouselActionAPI + "/" + carousel.Id).then(()=>
+             dispath(deleteCarousel(carousel)) 
+            ).catch(err=>{
+                console.log(err)
+            })
+   }
+   
+}

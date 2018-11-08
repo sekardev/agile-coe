@@ -5,16 +5,47 @@
   color:black;
   
 }
+.container{
+  display: flex;
+  justify-content: center;
+  margin-top:50px;
+  margin-bottom: 50px;
+  padding-left: 100px;
+}
+.flexcontainer{
+  display: flex;
+  flex-direction : column;
+  flex-grow: 2;
+}
+.articleContainer{  
+  display: flex;
+  flex-direction : row;
+}
+.frameworks{
+  
+  display: flex;
+  flex-direction: row;
+  justify-content: space-evenly;
+  margin-bottom: 20px;
+  margin-top: 10px;
+  padding-left:15px;
+}
+
 .card-img-top
 {
-  height: 100% !important;
+  
+  width : 330px;
+  height: 260px; 
   margin-left: -15px;
+
 }
+
 .card-text
 {
     margin-bottom: 3px;
     font-size: 10px !important;    
 }
+.articleContainer{margin-top: -20px;}
 .articlecontainer h5
 {
   color: white;
@@ -61,10 +92,11 @@
 }
 .articleTitle
 {
+  
   font-size: 24px;
   font-family: sans-serif;
   color:#ff4e17;
-  padding-left: -5px;
+  padding-left: 80px; 
 }
 .articleTitleRight
 {
@@ -201,7 +233,97 @@
     margin-right: -220px;
     margin-left: -140px;
   }
-  
+  .articlecontainer
+  {
+    height:900px;
+  }
+}
+@media screen and (max-width: 1500px) {
+  .articlecontainer
+  {
+    height:100%;
+  }
+
+}
+@media screen and (max-width: 767px) {
+  .articlecontainer
+  {
+    height:100%;
+  }
+  .cardDiv
+  {  
+    width:100%;    
+  }
+  .card-body
+  {
+    width:100%;
+  }
+  .articleContainer{      
+    flex-direction : column;
+    padding-left:15px;
+  }
+  .frameworks{
+    flex-direction: column  ;
+  }
+
+}
+
+
+
+
+.containerImg {
+  position: relative;
+  max-width: 800px;
+  margin: 0 auto;
+}
+.containerImg img {vertical-align: middle;}
+.content{
+  height: 100%;
+}
+
+.containerImg .content {
+  position: absolute;
+  bottom: 0;
+  background: rgb(0, 0, 0); /* Fallback color */
+  background: rgba(0, 0, 0, 0.5); /* Black background with 0.5 opacity */
+  color: #f1f1f1;
+  width: 105%;
+  padding: 20px;
+  margin-left: -15px;
+  opacity: 0;
+}
+.content:hover{
+  opacity: 1.8;
+  transition: .5s ease;
+}
+
+.articlePar{
+  display: flex;  
+  font-weight: bold;
+}
+.content{
+  display: flex;
+  align-items: center;
+}
+
+
+.otherArticles{
+  display: flex;
+  flex-direction: column;
+}
+.otheraritclerow{
+  display:flex;
   
 }
-  
+.arTitle , .arAuthor{
+  color: black;
+  font-size: 20px;
+  font-family: sans-serif;
+}
+.arAuthor{
+  font-size: 12px;
+}
+.arthead{
+  font-size: 20px;
+  border-bottom: gainsboro solid 1px;
+}

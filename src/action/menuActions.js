@@ -14,7 +14,7 @@ export function loadMenus()
 {
     
     return dispath =>{
-            axios.get(actions.menuAction).then(
+            axios.get(actions.menuActionAPI).then(
                 resp=>{                  
                     
                     dispath(getMenus(resp.data))

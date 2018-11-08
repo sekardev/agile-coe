@@ -4,6 +4,20 @@
     max-height: 250px !important;
 }
 
+.bgRow{
+  
+  background-color: ivory;
+  display: flex;
+  justify-content: center;
+}
+.bgRowChild{
+  margin-top :-20px;
+  width:31%;  
+}
+.teamContainer{
+  background-color:#fdb713 ;
+  margin-bottom: -21px;
+}
 /* Hide the carousel text when the screen is less than 600 pixels wide */
 @media (max-width: 600px) {
   .carousel-caption {
@@ -14,15 +28,13 @@
 
 .divBanner
 {
-  padding-top: 30px;  
+  padding-top: 12px;  
   padding-left:80px;
   padding-right:80px;
 }
 
 
 @media screen and (max-width: 360px) {
- 
-  
 .divBanner
 {
   padding:20px;  
@@ -31,7 +43,7 @@
 .divCarouselBg
   {
     padding-top: 70px;    
-    height: 350px;   
+    height: 280px;   
       background: linear-gradient(#ff4e17 ,#ee920c );
       
   }
@@ -75,16 +87,11 @@
   align-content: center;
   color:#ff4e17;
 }
-.carddescription
-{
-  font-size: 12px;
-  margin-top:1px;
-  font-family: sans-serif !important;
-}
+
 .MetricsDiv
 {
-  margin-right: 5px;
-  padding-left: 80px;  
+ display: flex;
+ justify-content: space-evenly; 
 }
 
 
@@ -101,11 +108,10 @@
  /*Custom CSS */
   .cardTitle{
   text-align: left;
-   margin-top:-20px;
-   padding-bottom: 15px;
+   margin-top:-20px;   
   font-family: sans-serif;
   font-size: 24px;
-  color:#ff4e17 ;
+  color:#ff4e17 !important;
  }
 
  .carousel-indicators
@@ -128,8 +134,8 @@
 .carouselDiv
 {
   color:white;
-  font-size:36px;
-  height : 180px;
+  font-size:26px;
+  height : 130px;
 	font-family: sans-serif;
 }
 
@@ -151,6 +157,7 @@
   margin-left:-50px;
 }
 
+
 /* 1920 * 1080 */
 
 .visionHmDiv
@@ -158,58 +165,20 @@
   margin-top:-30px;    
   margin-left:50px;  
 }
-@media screen and (max-width: 360px) {
-.visionHmDiv
-{
-  margin-left : 1px;
-}
-.divCarouselBg
-{
-  width:450px;
-}
-.highlightHmDiv
-{
-  margin-top:0px;    
-  margin-left:1px;
- }
-.EventHmDiv
-{
-  margin-top:0px; 
-  margin-left:1px;   
-}
-.articleDiv
-{
-  width:470px;
-  background-color: #F9F9F3;
-  margin-top:20px;
-  margin-bottom:10px;  
-}
-}
-@media screen and (max-width: 414px) {
-  .visionHmDiv
-  {
-    margin-left : 1px;
+
+@media screen and (max-width: 768px) {
+  .bgRow{
+  
+    background-color: ivory;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
   }
-  .divCarouselBg
-  {
-    width:450px;
-  }
-  .highlightHmDiv
-  {
-    margin-top:0px;    
-    margin-left:1px;
-   }
-  .EventHmDiv
-  {
-    margin-top:0px; 
-    margin-left:1px;   
+  .bgRowChild{
+    margin-top :-20px;
+    width:100%;  
+    margin-bottom: 30px;
   }
   }
   
-  @media screen and (max-width: 1920){
-    .visionHmDiv
-  {
-    margin-left:50px; 
-  }
-
-  }
+  
